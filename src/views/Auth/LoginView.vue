@@ -6,7 +6,7 @@ const remember = ref(false);
 
 <template>
   <CenterLayout>
-    <BaseForm title="Авторизация">
+    <DuckForm title="Авторизация">
       <template #inputs>
         <BaseInput
           v-model="username"
@@ -27,7 +27,7 @@ const remember = ref(false);
       <template #buttons>
         <BaseButton class="form__button" text="Войти" type="success" />
       </template>
-    </BaseForm>
+    </DuckForm>
   </CenterLayout>
 </template>
 

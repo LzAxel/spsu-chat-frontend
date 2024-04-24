@@ -33,7 +33,7 @@ const model = defineModel({
   }
   &__label {
     display: block;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     margin-left: 4px;
     margin-bottom: 4px;
     color: #fff;

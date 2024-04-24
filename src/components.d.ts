@@ -13,6 +13,7 @@ declare module 'vue' {
     BaseInput: typeof import('./components/UI/Inputs/BaseInput.vue')['default']
     BaseLayout: typeof import('./components/UI/Layout/BaseLayout.vue')['default']
     CenterLayout: typeof import('./components/UI/Layout/CenterLayout.vue')['default']
+    DuckForm: typeof import('./components/UI/Forms/DuckForm.vue')['default']
     MaterialIcon: typeof import('./components/UI/Icons/MaterialIcon.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
