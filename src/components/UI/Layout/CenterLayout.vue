@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 100dvh;
+  min-height: 100svh;
   height: 100%;
 }
 </style>

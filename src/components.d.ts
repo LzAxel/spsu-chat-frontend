@@ -7,15 +7,20 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    AppContainer: typeof import('./components/UI/Layout/AppContainer.vue')['default']
     BaseButton: typeof import('./components/UI/Buttons/BaseButton.vue')['default']
     BaseCheckbox: typeof import('./components/UI/Inputs/BaseCheckbox.vue')['default']
     BaseForm: typeof import('./components/UI/Forms/BaseForm.vue')['default']
     BaseInput: typeof import('./components/UI/Inputs/BaseInput.vue')['default']
-    BaseLayout: typeof import('./components/UI/Layout/BaseLayout.vue')['default']
+    BaseLabel: typeof import('./components/UI/Forms/BaseLabel.vue')['default']
+    BaseLayout: typeof import('./components/UI/Layout/AppContainer.vue')['default']
     CenterLayout: typeof import('./components/UI/Layout/CenterLayout.vue')['default']
     DuckForm: typeof import('./components/UI/Forms/DuckForm.vue')['default']
+    ErrorMessage: typeof import('./components/UI/Forms/ErrorMessage.vue')['default']
+    FormField: typeof import('./components/UI/Forms/FormField.vue')['default']
     MaterialIcon: typeof import('./components/UI/Icons/MaterialIcon.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SpinLogo: typeof import('./components/UI/Logo/SpinLogo.vue')['default']
   }
 }

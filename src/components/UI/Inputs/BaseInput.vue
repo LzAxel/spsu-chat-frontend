@@ -1,10 +1,17 @@
 <script setup lang="ts">
+import { v4 } from "uuid";
+
 const props = defineProps({
-  label: {
+  id: {
     type: String,
+    default: () => `input-${v4()}`,
   },
-  placeholder: {
-    type: String,
+  required: {
+    type: Boolean,
+    default: false,
+  },
+  invalid: {
+    type: Boolean,
     required: false,
   },
 });
@@ -12,38 +19,28 @@ const props = defineProps({
 const model = defineModel({
   type: String,
 });
+const field = inject("field", props);
 </script>
 
 <template>
-  <label class="base-input__wrapper">
-    <span class="base-input__label">{{ props.label }}</span>
-    <input
-      v-model="model"
-      :placeholder="props.placeholder"
-      class="base-input__input"
-    />
-  </label>
+  <input
+    :id="field.id"
+    :required="field.required"
+    v-model="model"
+    :class="[
+      'base-input__input',
+      field.invalid && 'base-input__input--invalid',
+    ]"
+  />
 </template>
 
 <style lang="scss" scoped>
 .base-input {
-  &__wrapper {
-    display: block;
-    width: 100%;
-  }
-  &__label {
-    display: block;
-    font-size: 0.8rem;
-    margin-left: 4px;
-    margin-bottom: 4px;
-    color: #fff;
-  }
-
   &__input {
     border: none;
     border-radius: $border-radius;
     font-size: 0.8rem;
-    padding: 10px 10px;
+    padding: 10px 10px 8px 10px;
     padding-top: 8px;
     width: 100%;
 
@@ -53,6 +50,10 @@ const model = defineModel({
 
     &:focus {
       outline: 2px solid $color--outline;
+    }
+
+    &--invalid {
+      border: 1px solid $color--danger;
     }
   }
 }
